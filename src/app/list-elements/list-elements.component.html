@@ -1,0 +1,33 @@
+<div class='list'>
+	<h3>
+	{{kind}}
+	</h3>
+	<input [(ngModel)]="searchText" placeholder="filter by name">
+	<table>
+		<tr>
+			<td>
+				{{kind}}
+			</td>
+			<td *ngIf="kind=='games'">
+				Share your game!
+			</td>
+			<td *ngIf="kind=='games'">
+				Players
+			</td>
+		</tr>
+		<tr *ngFor="let item of items | filter: searchText">
+			<td>
+				<a [routerLink]="['/'+kind, item.name]">{{item.name}}</a>
+			</td>
+			<td *ngIf="kind=='games'">
+				<select class='select-option' required [(ngModel)]="receiver">
+    				<option class='option' *ngFor='let usr of users' [value]="usr.name">{{usr.name}}</option>
+				</select>
+				<button mat-button (click)="shareGame(item)">Share game</button>
+			</td>
+			<td *ngFor="let player of item.players">
+				<a [routerLink]="['/users', player]">{{player}}</a>
+			</td>
+		</tr>
+	</table>
+</div>

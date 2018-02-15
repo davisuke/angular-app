@@ -1,0 +1,20 @@
+<header>
+	Angular App
+</header>
+<p class= "menu">
+	<a routerLink="/mainpage">Main</a>
+	<br>
+	<a [routerLink]="['/list', 'games']">Games</a>
+	<br>
+	<a [routerLink]="['/list', 'users']">Users</a>
+	<br>
+	<a *ngIf="show" routerLink="/">Login</a>
+</p>
+<p class="username">
+	{{username}}
+	<br>
+	<button (click)="logOut()" *ngIf="show == false">Log out</button>
+</p>
+<footer>
+
+</footer>

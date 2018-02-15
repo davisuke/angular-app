@@ -1,0 +1,14 @@
+.info {
+	padding-left: 10px;
+}
+.comments {
+	padding-left: 10px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+.table{
+	padding-bottom: 10px;
+}
+td {
+	padding: 10px
+}

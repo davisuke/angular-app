@@ -1,0 +1,20 @@
+header {
+	text-align: center;
+	padding: 20px 0;
+	font-size: 30px;
+	
+}
+
+.username {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.menu {
+	text-align: left;
+	padding-left: 20px;
+}
+
+footer {
+	border-bottom: 2px solid #eee;
+}

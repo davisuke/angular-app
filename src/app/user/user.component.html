@@ -1,0 +1,33 @@
+<p class='info'>
+  This is the <b>{{name}}</b> profile!
+  <br>
+  Birthdate: {{birthdate}}.
+</p>
+<ul>
+  	<li *ngFor="let game of games">
+  		<a [routerLink]="['/games', game.name]">{{game.name}}</a>
+	</li>
+</ul>
+
+<div class= 'comments'>
+	<label style="font-size: 25px"><b>Comments</b></label>
+	<br><br>
+
+	<table class= 'table' align="center">
+		<tr *ngFor="let comment of comments">
+			<td>{{ comment.user }} </td>
+			<td><i>{{ comment.comment }}</i></td>
+			<td style="font-size: 10px;">{{ comment.date }}</td>
+		</tr>
+	</table>
+
+	<form (submit)="saveComment($event)" *ngIf="show">
+		<div class="input">
+			<input type="text" required>
+		</div>
+		<br>
+		<div class="input">
+			<input type="submit" value="Save">
+		</div>
+	</form>
+</div>
